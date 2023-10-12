@@ -2,7 +2,7 @@ const recipe = require("../models/recipeModal");
 const db = require("../db");
 
 let getRecipe = async function (req, res) {
-  const data = await recipe.aggregate([{ $sample: { size: 5 } }]);
+  const data = await recipe.find();
   res.send(data);
 };
 
