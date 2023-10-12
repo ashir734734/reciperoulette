@@ -63,7 +63,7 @@ const App = () => {
   };
 
   const handlePrizeDefined = () => {
-    console.log("🥳 Prize defined! 🥳");
+    console.log("🥳 Got Idea ! 🥳");
     console.log(prizeList[prizeIndex]);
     setPrizeChosen(true);
   };
