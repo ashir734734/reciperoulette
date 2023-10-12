@@ -3,7 +3,6 @@ import axios from "axios";
 import "../App.css";
 import RoulettePro from "react-roulette-pro";
 import "react-roulette-pro/dist/index.css";
-import Iframe from "react-iframe";
 
 const App = () => {
   const [start, setStart] = useState(false);
@@ -82,7 +81,6 @@ const App = () => {
       <button className='button-85' onClick={handleStart}>
         PRESS HERE FOR AN IDEA
       </button>
-      {prizeChosen && console.log("��� Prize chosen! ���")}
     </>
   );
 };
