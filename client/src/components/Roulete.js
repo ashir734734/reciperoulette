@@ -3,6 +3,7 @@ import axios from "axios";
 import "../App.css";
 import RoulettePro from "react-roulette-pro";
 import "react-roulette-pro/dist/index.css";
+import Iframe from "react-iframe";
 
 const App = () => {
   const [start, setStart] = useState(false);
@@ -34,6 +35,13 @@ const App = () => {
   const generateId = () =>
     `${Date.now().toString(36)}-${Math.random().toString(36).substring(2)}`;
 
+  const handlePrizeDefined = () => {
+    setPrizeChosen(true);
+
+    console.log("🥳 Prize defined! 🥳");
+    console.log(prizeList[prizeIndex]);
+  };
+
   const prizeList = reproducedPrizeList.map((prize) => ({
     ...prize,
     id:
@@ -41,6 +49,7 @@ const App = () => {
         ? crypto.randomUUID()
         : generateId(),
   }));
+
   function getRecipes() {
     try {
       axios.get("http://localhost:3000/").then((response) => {
@@ -62,25 +71,41 @@ const App = () => {
     setPrizeChosen(false);
   };
 
-  const handlePrizeDefined = () => {
-    console.log("🥳 Got Idea ! 🥳");
-    console.log(prizeList[prizeIndex]);
-    setPrizeChosen(true);
-  };
-
   return (
     <>
       <RoulettePro
         prizes={prizeList}
         prizeIndex={prizeIndex}
         start={start}
-        onPrizeDefined={handlePrizeDefined}
-        options={{ stopInCenter: true }}
         defaultDesignOptions={{ prizesWithText: true }}
+        options={{ stopInCenter: true }}
+        onPrizeDefined={handlePrizeDefined}
+        spinningTime={3}
       />
       <button className='button-85' onClick={handleStart}>
         PRESS HERE FOR AN IDEA
       </button>
+      {prizeChosen && (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: "2em",
+          }}
+        >
+          <Iframe
+            url={prizeList[prizeIndex].recipeLink}
+            width='640px'
+            height='320px'
+            id=''
+            className='iFrame'
+            display='block'
+            position='relative'
+            align='center'
+          />
+        </div>
+      )}
     </>
   );
 };
