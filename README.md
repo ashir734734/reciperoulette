@@ -1,8 +1,10 @@
 # Recipe Roulette
 
-![Node.js](https://img.shields.io/badge/Built%20with-Node.js-green)
+![Node.js](https://img.shields.io/badge/Node.js-v19.7.0-green)
+![npm](https://img.shields.io/badge/npm-v10.2.0-red)
 ![React](https://img.shields.io/badge/Built%20with-React-blue)
 ![Express.js](https://img.shields.io/badge/Built%20with-Express.js-red)
+![Last Build Status](https://img.shields.io/badge/Last%20Build-Successful-brightgreen)
 
 
 ## Overview
@@ -12,6 +14,14 @@ Recipe Roulette is a fun and basic app that helps users discover new recipes by 
 ## Demo Website
 
 To experience Recipe Roulette in action, visit our demo website: [Recipe Roulette Demo](https://throbbing-hill-7380.fly.dev/)
+
+
+
+https://github.com/ashir734734/reciperoulette/assets/52703606/682aacce-5e2f-41be-8106-9c5ed99db990
+
+
+
+
 
 
 ## Getting Started
