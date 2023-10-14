@@ -52,7 +52,7 @@ const App = () => {
 
   function getRecipes() {
     try {
-      axios.get("http://localhost:3000/").then((response) => {
+      axios.get(process.env.REACT_APP_API).then((response) => {
         setRecipes(response.data);
       });
     } catch (error) {
