@@ -7,14 +7,9 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    window.addEventListener("load", () => {
+    setTimeout(() => {
       setIsLoading(false);
-    });
-    return () => {
-      window.removeEventListener("load", () => {
-        setIsLoading(false);
-      });
-    };
+    }, 3000);
   }, []);
 
   return (
